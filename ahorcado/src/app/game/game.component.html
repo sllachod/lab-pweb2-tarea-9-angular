@@ -1,1 +1,13 @@
-<p>game works!</p>
+<div *ngIf="gameStatus === 'playing'">
+  <app-hangman-status [attempts]="attempts" [maxAttempts]="maxAttempts"></app-hangman-status>
+  <div>
+    <h1>{{ hiddenWord.join(' ') }}</h1>
+    <app-keyboard (letterClicked)="guess($event)"></app-keyboard>
+  </div>
+</div>
+<div *ngIf="gameStatus === 'won'">
+  <h1>¡Ganaste!</h1>
+</div>
+<div *ngIf="gameStatus === 'lost'">
+  <h1>Perdiste. La palabra era {{ word }}</h1>
+</div>
