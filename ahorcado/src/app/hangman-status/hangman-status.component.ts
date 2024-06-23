@@ -9,7 +9,73 @@ export class HangmanStatusComponent {
   @Input() attempts: number = 0;
   @Input() maxAttempts: number = 6;
 
-  getHangmanImage(): string {
-    return `assets/hangman${this.attempts}.png`;
+  hangmanStages: string[] = [
+    `
+     ------
+     |    |
+     |
+     |
+     |
+     |
+    ---
+    `,
+    `
+     ------
+     |    |
+     |    O
+     |
+     |
+     |
+    ---
+    `,
+    `
+     ------
+     |    |
+     |    O
+     |    |
+     |
+     |
+    ---
+    `,
+    `
+     ------
+     |    |
+     |    O
+     |   /|
+     |
+     |
+    ---
+    `,
+    `
+     ------
+     |    |
+     |    O
+     |   /|\\
+     |
+     |
+    ---
+    `,
+    `
+     ------
+     |    |
+     |    O
+     |   /|\\
+     |   /
+     |
+    ---
+    `,
+    `
+     ------
+     |    |
+     |    O
+     |   /|\\
+     |   / \\
+     |
+    ---
+    `
+  ];
+
+  getHangmanStage(): string {
+    return this.hangmanStages[this.attempts];
   }
 }

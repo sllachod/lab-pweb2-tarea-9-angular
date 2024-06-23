@@ -1,7 +1,6 @@
 <div class="status">
-    <p>Intentos: {{ attempts }} / {{ maxAttempts }}</p>
-  </div>
-  <div class="hangman">
-    <img [src]="getHangmanImage()" alt="Hangman status">
-  </div>
-  
+  <p>Intentos: {{ attempts }} / {{ maxAttempts }}</p>
+</div>
+<div class="hangman">
+  <pre>{{ getHangmanStage() }}</pre>
+</div>
