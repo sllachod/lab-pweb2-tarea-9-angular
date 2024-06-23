@@ -6,8 +6,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./hangman-status.component.css']
 })
 export class HangmanStatusComponent {
-  @Input()
-  attempts!: number;
-  @Input()
-  maxAttempts!: number;
+  @Input() attempts: number = 0;
+  @Input() maxAttempts: number = 6;
+
+  getHangmanImage(): string {
+    return `assets/hangman${this.attempts}.png`;
+  }
 }

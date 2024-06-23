@@ -1,1 +1,6 @@
-<p>keyboard works!</p>
+<div>
+    <button *ngFor="let letter of letters" (click)="onLetterClick(letter)" [disabled]="usedLetters.includes(letter)">
+      {{ letter }}
+    </button>
+  </div>
+  

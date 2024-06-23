@@ -1,0 +1,18 @@
+.status {
+    font-size: 1.2rem;
+    margin: 20px 0;
+  }
+  
+  .hangman {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    margin: 20px 0;
+  }
+  
+  .hangman img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  

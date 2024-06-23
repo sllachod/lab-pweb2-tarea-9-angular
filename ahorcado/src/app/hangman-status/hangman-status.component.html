@@ -1,1 +1,7 @@
-<p>hangman-status works!</p>
+<div class="status">
+    <p>Intentos: {{ attempts }} / {{ maxAttempts }}</p>
+  </div>
+  <div class="hangman">
+    <img [src]="getHangmanImage()" alt="Hangman status">
+  </div>
+  

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-keyboard',
@@ -6,6 +6,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./keyboard.component.css']
 })
 export class KeyboardComponent {
+  @Input() usedLetters: string[] = [];
   @Output() letterClicked = new EventEmitter<string>();
   letters: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 

@@ -11,12 +11,19 @@ export class GameComponent implements OnInit {
   attempts: number = 0;
   maxAttempts: number = 6;
   gameStatus: string = 'playing'; // playing, won, lost
+  usedLetters: string[] = [];
 
   ngOnInit(): void {
-    this.hiddenWord = '_'.repeat(this.word.length).split('');
+    this.resetGame();
   }
 
   guess(letter: string): void {
+    if (this.usedLetters.includes(letter) || this.gameStatus !== 'playing') {
+      return;
+    }
+
+    this.usedLetters.push(letter);
+
     if (this.word.includes(letter)) {
       this.word.split('').forEach((char, index) => {
         if (char === letter) {
@@ -32,5 +39,16 @@ export class GameComponent implements OnInit {
         this.gameStatus = 'lost';
       }
     }
+  }
+
+  restartGame(): void {
+    this.resetGame();
+  }
+
+  private resetGame(): void {
+    this.hiddenWord = '_'.repeat(this.word.length).split('');
+    this.attempts = 0;
+    this.gameStatus = 'playing';
+    this.usedLetters = [];
   }
 }
