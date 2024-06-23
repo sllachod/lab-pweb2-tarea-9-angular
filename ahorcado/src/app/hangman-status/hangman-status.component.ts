@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hangman-status',
-  standalone: true,
-  imports: [],
   templateUrl: './hangman-status.component.html',
-  styleUrl: './hangman-status.component.css'
+  styleUrls: ['./hangman-status.component.css']
 })
 export class HangmanStatusComponent {
-
+  @Input()
+  attempts!: number;
+  @Input()
+  maxAttempts!: number;
 }
